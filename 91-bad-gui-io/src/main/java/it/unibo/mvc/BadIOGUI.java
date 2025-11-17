@@ -47,7 +47,6 @@ public class BadIOGUI {
         final JButton write = new JButton("Write on file");
         panel.add(write);
         canvas.add(panel, BorderLayout.CENTER); // Set the new JPanel as the only content of the center of the current BorderLayout
-        
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
@@ -95,6 +94,7 @@ public class BadIOGUI {
         /*
          * OK, ready to push the frame onscreen
          */
+        frame.pack();
         frame.setVisible(true);
     }
 
@@ -105,5 +105,6 @@ public class BadIOGUI {
      */
     public static void main(final String... args) {
        new BadIOGUI().display();
+       
     }
 }
