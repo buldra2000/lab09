@@ -45,6 +45,8 @@ public class BadIOGUI {
         canvas.setLayout(new BorderLayout());
         panel.setLayout(new BoxLayout(panel, BoxLayout.LINE_AXIS)); //Horizontal Box Layout
         final JButton write = new JButton("Write on file");
+        final JButton read = new JButton("Read");
+        panel.add(read);
         panel.add(write);
         canvas.add(panel, BorderLayout.CENTER); // Set the new JPanel as the only content of the center of the current BorderLayout
         frame.setContentPane(canvas);
