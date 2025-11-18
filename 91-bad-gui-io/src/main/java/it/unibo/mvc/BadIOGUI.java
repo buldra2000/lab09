@@ -10,7 +10,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
@@ -77,11 +79,23 @@ public class BadIOGUI {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                
                 System.out.println("Button Read Pressed");
+                try {
+                    File file = new File(PATH);
+                    FileReader fr = new FileReader(file);
+                    BufferedReader br = new BufferedReader(fr);
+
+                    System.out.println(br.readLine());
+                    br.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
-            
         });
+
     }
+    
 
     private void display() {
         /*
@@ -114,7 +128,7 @@ public class BadIOGUI {
      *
      * @param args ignored
      */
-    public static void main(final String... args) {
+    public static void main(final String... args) throws IOException {
        new BadIOGUI().display();
        
     }
